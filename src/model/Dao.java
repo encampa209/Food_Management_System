@@ -124,7 +124,7 @@ public class Dao {
     
     
     public boolean insertCart(Cart cart){
-        String sql = "insert into cart (cid, pid, pName, qty, price, total) valuse(?,?,?,?,?,?)";
+        String sql = "insert into cart (cid, pid, pName, qty, price, total) values(?,?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, cart.getId());
@@ -176,7 +176,7 @@ public class Dao {
         
         try {
             st = con.createStatement();
-             rs = st.executeQuery("select sum(total) as 'total' from cart where cid = '" + cid+"'");
+            rs = st.executeQuery("select sum(total) as 'total' from cart where cid = '" + cid+"'");
              
              
              if(rs.next()){

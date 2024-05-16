@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Eduardo Navarrete
+ * @author Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
  */
 public class HomeFrame extends javax.swing.JFrame {
 
@@ -139,6 +139,7 @@ public class HomeFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

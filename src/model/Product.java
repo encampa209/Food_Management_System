@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Eduardo Campa
+ * Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
  */
 public class Product {
     

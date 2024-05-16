@@ -20,7 +20,7 @@ import model.Payment;
 
 /**
  *
- * @author Eduardo Navarrete
+ * @author Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
  */
 public class CartFrame extends javax.swing.JFrame {
 
@@ -154,8 +154,8 @@ public class CartFrame extends javax.swing.JFrame {
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton3.setText("Payment");
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setText("Please Take Cash From Customer use the Change ($) to Return the Correct Amount of $");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -237,9 +237,9 @@ public class CartFrame extends javax.swing.JFrame {
                                         .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
                                         .addComponent(jTextField2))
                                     .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(16, 16, 16))))
         );
@@ -306,6 +306,7 @@ public class CartFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -350,16 +351,15 @@ public class CartFrame extends javax.swing.JFrame {
         model = (DefaultTableModel) jTable1.getModel();
         String proName = "";
         String proId = "";
-        for(int i = 0; i < model.getRowCount(); i++){
+        for(int i = 1; i < model.getRowCount(); i++){
             proId += model.getValueAt(i, 1).toString()+ ", ";
             proName += model.getValueAt(i, 2).toString()+ ", ";
         }
         
         
-        int pid = dao.getMaxRowAPaymentTable() + 1;
+        int pid = dao.getMaxRowAPaymentTable();
         String cName = jTextField6.getText().trim();
         double t = Double.parseDouble(jTextField5.getText().trim());
-        
         Payment payment = new Payment();
         payment.setPid(pid);
         payment.setcName(cName);
@@ -372,11 +372,10 @@ public class CartFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Payment Succeed!!");
                 int cid = Integer.parseInt(model.getValueAt(rowIndex, 0).toString());
                 dao.deleteCart(cid);
-                
-                int x = JOptionPane.showConfirmDialog(this, "Do you want to print the receipt?", "Print", JOptionPane.YES_NO_OPTION, 0);
-                if( x == JOptionPane.YES_OPTION){
+                int x = JOptionPane.showConfirmDialog(null, "Do you want to print the receipt?", "Print", JOptionPane.YES_NO_OPTION, 0);
+                if (x == JOptionPane.YES_OPTION) {
                     try {
-                        MessageFormat header = new MessageFormat("***Food Management System***"+ "Customer Name:"+ cName+ " "+ "$Total($): "+ t);
+                        MessageFormat header = new MessageFormat("**Taco Truck** " + "Customer Name: " + cName + "  " + "Total ($): " + t);
                         MessageFormat footer = new MessageFormat("Page{0, number,integer}");
                         jTable1.print(JTable.PrintMode.FIT_WIDTH, header, footer);
                         setVisible(false);

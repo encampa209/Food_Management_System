@@ -12,7 +12,7 @@ import model.Dao;
 
 /**
  *
- * @author Eduardo Navarrete
+ * @author Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos Veloz, and Daniel Felix
  */
 public class ViewOrdersFrame extends javax.swing.JFrame {
 

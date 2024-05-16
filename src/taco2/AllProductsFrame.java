@@ -18,7 +18,7 @@ import model.Dao;
 
 /**
  *
- * @author Eduardo Campa, Jake Sandoval, 
+ * @author Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos Veloz, and Daniel Felix
  */
 public class AllProductsFrame extends javax.swing.JFrame {
 

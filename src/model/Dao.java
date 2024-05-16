@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Eduardo Navarrete
+ * @author Eduardo Campa, Jake Sandoval, Carlos V, Carlos S, Matthew Morrow, Daniel Felix
  */
 public class Dao {
 
@@ -26,7 +26,7 @@ public class Dao {
     ResultSet rs;
 
     public boolean insertProduct(Product p) {
-        String sql = "insert into product (name, price, image) values (?,?,?)";
+        String sql = "insert into product (name,price,image) values (?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, p.getName());
@@ -38,7 +38,25 @@ public class Dao {
         }
 
     }
-
+    public void getProducts(JTable table) {
+        String sql = "select name, price, image from product order by id desc";
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) table.getModel();
+            Object[] row;
+            while (rs.next()) {
+                row = new Object[3];
+                row[0] = rs.getString(1);
+                row[1] = rs.getDouble(2);
+                row[2] = rs.getBytes(3);
+                model.addRow(row);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void getallProducts(JTable table) {
         String sql = "select * from product order by id desc";
 
@@ -218,7 +236,7 @@ public class Dao {
     }
         
        public boolean insertPayment(Payment payment) {
-        String sql = "insert into payment (pid, cName, proid, pNsme, total, pdate) valuse(?,?,?,?,?,?)";
+        String sql = "insert into payment (pid, cName, proid, pName, total, pdate) values(?,?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, payment.getPid());
@@ -291,7 +309,7 @@ public class Dao {
 
         try {
             st = con.createStatement();
-            rs = st.executeQuery("select sum(total) as 'total' from payment where pdate -'"+date+"'");
+            rs = st.executeQuery("select sum(total) as 'total' from payment where pdate ='"+date+"'");
             if(rs.next()){
                 total = rs.getDouble(1);
             }

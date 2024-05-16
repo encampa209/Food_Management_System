@@ -20,7 +20,7 @@ import model.Dao;
 
 /**
  *
- * @author Eduardo Navarrete
+ * Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
  */
 public class OrderFrame extends javax.swing.JFrame {
 
@@ -242,25 +242,25 @@ public class OrderFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+       
         setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        // TODO add your handling code here:
+        
         xx = evt.getX();
         xy = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        // TODO add your handling code here:
+      
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
+       
         for (double i = 0.1; i <= 1.0; i += 0.1) {
             String s = "" + i;
             float f = Float.parseFloat(s);
@@ -275,14 +275,14 @@ public class OrderFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
+  
         model = (DefaultTableModel) jTable1.getModel();
         rowIndex = jTable1.getSelectedRow();
         jTextField2.setText(model.getValueAt(rowIndex, 1).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+     
         if(jTextField2.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please select a product", "Warning", 2);
         }else if (jTextField3.getText().isEmpty() || jTextField3.getText().equals("0")){
@@ -326,7 +326,7 @@ public class OrderFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+      
         if(total != 0.0){
             new CartFrame().setVisible(true);
             setVisible(false);

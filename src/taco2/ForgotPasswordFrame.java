@@ -201,36 +201,36 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+       
         setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
+  
         new LoginFrame().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        // TODO add your handling code here:
+     
         jPasswordField1.setEchoChar((char) 0);
         jLabel10.setVisible(false);
         jLabel2.setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
+       
         jPasswordField1.setEchoChar('*');
         jLabel10.setVisible(true);
         jLabel2.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTextField2KeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
+  
         for(double i = 0.1; i <=1.0; i +=.1){
             String s = ""+i;
             float f = Float.parseFloat(s);
@@ -246,20 +246,20 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        
         new LoginFrame().setVisible(true);
         setVisible(false);
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        // TODO add your handling code here:
+    
         xx = evt.getX();
         xy = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
-        // TODO add your handling code here:
+        
         char input = evt.getKeyChar();
         if (!(input < '0' || input > '9') && input != '\b') {
             evt.consume();
@@ -268,22 +268,22 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2KeyTyped
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        // TODO add your handling code here:
+       
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_jTextField3KeyPressed
 
     private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField3KeyTyped
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
+        
         if(jTextField3.getText().isEmpty()){
            JOptionPane.showMessageDialog(this, "Username is required", "Warning", 2); 
         }else{
@@ -302,7 +302,7 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       
         if(isEmpty()){
             String username = jTextField3.getText();
             String ans = jTextField4.getText();

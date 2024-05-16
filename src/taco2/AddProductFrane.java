@@ -180,25 +180,25 @@ public class AddProductFrane extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+        
         setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        // TODO add your handling code here:
+        
         xx = evt.getX();
         xy = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        // TODO add your handling code here:
+        
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x -xx, y -xy );
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
+       
         for(double i = 0.1; i <= 1.0; i += 0.1){
             String s = ""+i;
             float f = Float.parseFloat(s);
@@ -213,7 +213,7 @@ public class AddProductFrane extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setMultiSelectionEnabled(false);
         if(jFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
@@ -229,7 +229,7 @@ public class AddProductFrane extends javax.swing.JFrame {
         file = null; 
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       
         try {
             Product product = new Product();
             product.setName(jTextField1.getText().trim());

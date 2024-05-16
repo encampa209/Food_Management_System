@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * Eduardo Navarrete, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
+ * Eduardo Campa, Jake Sandoval, Matthew Morrow, Carlos Zavala, Carlos V, and Daniel Felix
  */
 public class Payment {
     private int pid;

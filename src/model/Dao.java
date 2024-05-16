@@ -187,9 +187,10 @@ public class Dao {
         }
         return subTotal;
     }
-        public void getProductsFromCart(JTable table) {
+    
+     public void getProductsFromCart(JTable table) {
             int cid = getMaxRowACartTable();
-        String sql = "select * from product cart where cid = ?";
+        String sql = "select * from cart where cid = ?";
         
         try {
             ps = con.prepareStatement(sql);

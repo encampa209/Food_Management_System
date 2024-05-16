@@ -352,7 +352,7 @@ public class CartFrame extends javax.swing.JFrame {
         String proId = "";
         for(int i = 0; i < model.getRowCount(); i++){
             proId += model.getValueAt(i, 1).toString()+ ", ";
-            proName += model.getValueAt(i, 1).toString()+ ", ";
+            proName += model.getValueAt(i, 2).toString()+ ", ";
         }
         
         
@@ -369,7 +369,7 @@ public class CartFrame extends javax.swing.JFrame {
         payment.setDate(jTextField2.getText().trim());
         if(check()){
             if(dao.insertPayment(payment)){
-                JOptionPane.showMessageDialog(this, "Payment Success!!");
+                JOptionPane.showMessageDialog(this, "Payment Succeed!!");
                 int cid = Integer.parseInt(model.getValueAt(rowIndex, 0).toString());
                 dao.deleteCart(cid);
                 
@@ -377,7 +377,7 @@ public class CartFrame extends javax.swing.JFrame {
                 if( x == JOptionPane.YES_OPTION){
                     try {
                         MessageFormat header = new MessageFormat("***Food Management System***"+ "Customer Name:"+ cName+ " "+ "$Total($): "+ t);
-                        MessageFormat footer = new MessageFormat("Page(0, number,integer)");
+                        MessageFormat footer = new MessageFormat("Page{0, number,integer}");
                         jTable1.print(JTable.PrintMode.FIT_WIDTH, header, footer);
                         setVisible(false);
                     } catch (PrinterException ex) {
@@ -400,7 +400,6 @@ public class CartFrame extends javax.swing.JFrame {
 
     private void jTextField8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyReleased
         // TODO add your handling code here:
-        cash();
     }//GEN-LAST:event_jTextField8KeyReleased
 
     private void jTextField7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyReleased

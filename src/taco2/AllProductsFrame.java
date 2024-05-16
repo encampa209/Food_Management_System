@@ -18,7 +18,7 @@ import model.Dao;
 
 /**
  *
- * @author Eduardo Navarrete
+ * @author Eduardo Campa, Jake Sandoval, 
  */
 public class AllProductsFrame extends javax.swing.JFrame {
 
